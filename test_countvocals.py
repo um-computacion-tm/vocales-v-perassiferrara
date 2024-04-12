@@ -39,5 +39,17 @@ class TestCountVocals(unittest.TestCase):
         result = count_vocals("OrnItorrinco")
         self.assertEqual(result, {"i":2, "o":3})
     
+    def test_america_mayus_accent(self):
+        result = count_vocals("América")
+        self.assertEqual(result, {"a":2, "e":1, "i":1})
+
+    def test_murcielago_mayus_accent(self):
+        result = count_vocals("MURciÉlAgo")
+        self.assertEqual(result, {"a":1, "e":1, "i":1, "o":1, "u":1})
+
+    def test_esdrujula_mayus_accent(self):
+        result = count_vocals("esdrÚjulA")
+        self.assertEqual(result, {"a":1, "e":1, "u":2})
+
 if __name__ == "__main__":
     unittest.main()
